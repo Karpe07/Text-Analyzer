@@ -1,72 +1,55 @@
-import React ,{useState} from "react";
+import React, { useState } from "react";
 
-export default function About() {
-    const [btn, setbtn] = useState("Enable dark mode")
+export default function About(props) {
+
+    // const [myStyle, setmyStyle] = useState({
+    //     color: "black",
+    //     backgroundColor: "white",
+    //     border: "1px solid black"
+    // })
     
-    const [myStyle, setmyStyle] = useState({
-        color : "black" , 
-        backgroundColor: "white",
-        border : "1px solid black"
-    })
-    const toggle = () =>{
-        if (myStyle.color === "black" ) {
-            setmyStyle({
-                color : "white" , 
-                backgroundColor : "black",
-                border : "1px solid white"
-            })
-            setbtn("Enable dark mode")
-        }
-        else {
-            setmyStyle({
-                color : "black" , 
-                backgroundColor : "white",
-                border : "1px solid black"
-            })
-            setbtn("Enable Light mode")
-        }
+    let myStyle = {
+        color : props.mode === 'dark'?'white':'#535c64',
+        backgroundColor : props.mode === 'dark'?'#535c64':'white'
+
     }
 
-
     return (
-       <div className="container"  style={myStyle}>
-        <h2>About Us</h2>
-         <div className="accordion accordion-flush" id="accordionFlushExample">
-            <div className="accordion-item" style={myStyle}>
-                <h2 className="accordion-header">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style={myStyle}>
-                        Accordion Item #1
-                    </button>
-                </h2>
-                <div id="flush-collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+        <div className="container" style={myStyle}>
+            <h2>About Us</h2>
+            <div className="accordion accordion-flush my-4" id="accordionFlushExample">
+                <div className="accordion-item" style={myStyle}>
+                    <h2 className="accordion-header">
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style={myStyle}>
+                            <strong>Analyze your text</strong>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div className="accordion-body">Text Analyzer is the best way to Analyze your text quickly and efficiently. we can do operations like as changing the case of text, text-to-speak or many more!</div>
+                    </div>
                 </div>
-            </div>
-            <div className="accordion-item" style={myStyle}>
-                <h2 className="accordion-header">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" style={myStyle}>
-                        Accordion Item #2
-                    </button>
-                </h2>
-                <div id="flush-collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                <div className="accordion-item" style={myStyle}>
+                    <h2 className="accordion-header">
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" style={myStyle}>
+                            <strong>Free to Use</strong>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div className="accordion-body">Text-Analyzer is totally free to use. We have not imposing any charges for the same</div>
+                    </div>
                 </div>
-            </div>
-            <div className="accordion-item" style={myStyle}>
-                <h2 className="accordion-header">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" style={myStyle}>
-                        Accordion Item #3
-                    </button>
-                </h2>
-                <div id="flush-collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                <div className="accordion-item" style={myStyle}>
+                    <h2 className="accordion-header">
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" style={myStyle}>
+                            <strong>Browser compatible</strong>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div className="accordion-body">Text-analyzer is designed in such a way that it is compatible with any browser. so that you seemlessly use it without any hessitation</div>
+                    </div>
                 </div>
-            </div>
-            <div className="form-check form-switch my-3">
-                <input className="form-check-input" type="checkbox" onClick={toggle} role="switch" id="flexSwitchCheckDefault"/>
-                    <label className="form-check-label" For="flexSwitchCheckDefault">{btn}</label>
+
             </div>
         </div>
-       </div>
     )
 }
