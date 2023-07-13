@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = 23
+        // let a = "This is an java script tutorials"
+        console.log(a)
+
+        function hello(){
+            let num1 = 12
+            let num2 = 23
+            let sum = num1+ num2
+            console.log("Hello Akash, How are you feeling?", + sum)
+        }
+
+        let obja = {
+            r : 34,
+            m : "My name is Akash",
+            func : function myfunc(number){
+                console.log("The Number is : " + number)
+            }
+        }
+
+        document.addEventListener("click" , function click(){
+            console.log("We have just clicked on the text")
+            // alert("Are you sure?")
+            let conf = confirm("clicked")
+            // console.log(conf)
+        })
+
+        arrowfun = () =>{
+            array = [24,45,66,20,34,67]
+            array.forEach(element => {
+                if (element%2 == 0) {
+                    console.log(element , "is an Even Number")
+                } else {
+                    console.log(element , "is an Odd Number")
+                }
+                
+            });
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>
+        This this testing js server 
+    </h1>
+</body>
+</html>
